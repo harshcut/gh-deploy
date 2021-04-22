@@ -1,0 +1,52 @@
+import { Flash, Heading, Text, Link, Label } from "@primer/components";
+
+### Documentation
+
+<Flash>
+  <Heading fontSize={1}>README</Heading>
+  <Text fontSize={1} as="p">
+    This isn't an official documentation on GitHub Deployments. For more
+    information visit{" "}
+    <Link rel="noopener" target="_blank" href="https://docs.github.com/en">
+      GitHub Documentation
+    </Link>
+    .
+  </Text>
+</Flash>
+
+GitHub Deployments is an unofficial client for managing GitHub deployment environments. It uses official <Link rel="noopener" target="_blank" href="https://docs.github.com/en/rest">GitHub API</Link> and uses the same components and design guidelines of that of GitHub's design system with <Link rel="noopener" target="_blank" href="https://primer.style/">Primer</Link>.
+
+### Deployments
+
+Enter your username and repository to view your current deployments. Make sure your **repository is made public**, as github doesn't let you share details of your private repositories.
+
+More information on repository visibility can be found <Link rel="noopener" target="_blank" href="https://docs.github.com/en/github/administering-a-repository/setting-repository-visibility">here</Link>.
+
+### Personal Access Token
+
+Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
+
+_As a security precaution, GitHub automatically removes personal access tokens that haven't been used in a year._
+
+To create your personal access token head to github account **Settings** and then **Developer Settings**. In the left sidebar, click **Personal Access Tokens**. Click on **Generate New Token**, and give your token a descriptive name. From the checkboxes below, select the one with <Label bg="#0366d6">repo_deployment</Label>. Click **Generate Token**.
+
+Copy the token to your clipboard and keep it safe. You will not be able to see the token again, after you navigate off the page.
+
+<Flash variant="warning">
+  <Heading fontSize={1}>Warning</Heading>
+  <Text fontSize={1} as="p">
+    For security reasons delete the token after your task is complete, as you
+    can recreate them anytime you want. Treat your tokens like passwords and
+    keep them secret.
+  </Text>
+</Flash>
+
+### Data Updates
+
+GitHub takes time to change the API response for the deleted deployment. Hence, the **results may be delayed** and may produce conflict. Make sure to reload the data or refresh the page.
+
+This may be improved in the future updates.
+
+### License
+
+This project is licensed under the <Link rel="noopener" target="_blank" href="https://github.com/harshcut/gh-deploy/blob/main/LICENSE">Apache-2.0</Link>.

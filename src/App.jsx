@@ -2,6 +2,7 @@ import React from "react";
 import { Header, StyledOcticon, UnderlineNav } from "@primer/components";
 import { RocketIcon } from "@primer/octicons-react";
 import { Switch, Route, NavLink } from "react-router-dom";
+import { Docs } from "./pages";
 import styled from "styled-components";
 
 const Banner = styled.header`
@@ -48,7 +49,7 @@ const App = () => {
         </UnderlineNav>
         <Switch>
           <Route exact path="/docs">
-            Documentation
+            <Docs />
           </Route>
           <Route path="/">Home</Route>
         </Switch>
