@@ -1,6 +1,7 @@
 import React from "react";
-import { Header, StyledOcticon } from "@primer/components";
+import { Header, StyledOcticon, UnderlineNav } from "@primer/components";
 import { RocketIcon } from "@primer/octicons-react";
+import { Switch, Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Banner = styled.header`
@@ -14,6 +15,12 @@ const Title = styled.h1`
   margin: 0;
   font-size: 32px;
   font-weight: 300;
+`;
+
+const Wrapper = styled.section`
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 16px;
 `;
 
 const App = () => {
@@ -30,6 +37,22 @@ const App = () => {
       <Banner>
         <Title>Instantly remove, view and manage deployments.</Title>
       </Banner>
+      <Wrapper>
+        <UnderlineNav aria-label="main" mb={5}>
+          <UnderlineNav.Link exact to="/" as={NavLink}>
+            Home
+          </UnderlineNav.Link>
+          <UnderlineNav.Link to="/docs" as={NavLink}>
+            Documentation
+          </UnderlineNav.Link>
+        </UnderlineNav>
+        <Switch>
+          <Route exact path="/docs">
+            Documentation
+          </Route>
+          <Route path="/">Home</Route>
+        </Switch>
+      </Wrapper>
     </>
   );
 };
