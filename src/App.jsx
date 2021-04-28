@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, StyledOcticon, UnderlineNav } from "@primer/components";
+import { Header, StyledOcticon, UnderlineNav, Link } from "@primer/components";
 import { RocketIcon } from "@primer/octicons-react";
 import { Switch, Route, NavLink } from "react-router-dom";
 import { Docs } from "./pages";
@@ -22,6 +22,16 @@ const Wrapper = styled.section`
   max-width: 840px;
   margin: 0 auto;
   padding: 0 16px;
+`;
+
+const Footer = styled.footer`
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 30px 0;
+  border-top: 1px solid #eaecef;
+  font-size: 14px;
+  flex-wrap: wrap;
 `;
 
 const App = () => {
@@ -53,6 +63,34 @@ const App = () => {
           </Route>
           <Route path="/">Home</Route>
         </Switch>
+        <Footer>
+          {[
+            {
+              name: "GitHub",
+              url: "https://github.com/harshcut",
+            },
+            {
+              name: "Source",
+              url: "https://github.com/harshcut/gh-deploy",
+            },
+            {
+              name: "Issues",
+              url: "https://github.com/harshcut/gh-deploy/issues",
+            },
+            {
+              name: "Documentation",
+              url: "https://github.com/harshcut/gh-deploy#readme",
+            },
+            {
+              name: "License",
+              url: "https://github.com/harshcut/gh-deploy/blob/main/LICENSE",
+            },
+          ].map((item, index) => (
+            <Link href={item.url} key={index}>
+              {item.name}
+            </Link>
+          ))}
+        </Footer>
       </Wrapper>
     </>
   );
