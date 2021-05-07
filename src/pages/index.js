@@ -1,3 +1,4 @@
 import Docs from "./Docs.mdx";
+import Home from "./Home.jsx";
 
-export { Docs };
+export { Docs, Home };
