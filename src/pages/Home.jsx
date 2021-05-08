@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { OctofaceIcon, RepoIcon } from "@primer/octicons-react";
 import { getDeploymentData } from "../utils/api";
 import { UserContext } from "../utils/context";
-import { Alert } from "../components";
+import { Alert, DataTable } from "../components";
 import {
   FormGroup,
   TextInput,
@@ -60,7 +60,7 @@ const Home = () => {
         {(formState.errors.name || formState.errors.repo) && (
           <Alert type="required" />
         )}
-        {formStatus === 200 && <Alert type="wait" />}
+        {formStatus === 200 && <DataTable />}
         {formStatus === 404 && <Alert type="invalid" />}
         {formStatus === 403 && <Alert type="limit" />}
       </Grid>
